@@ -1,13 +1,14 @@
 #####     Run Production     #####
-from os.path import join, splitext, basename
-import numpy as np
-from tensorflow.keras.preprocessing import image
-import time
 # import opcua
 # from opcua import Client, ua
 import os
-from tensorflow.keras.models import load_model
+import time
+from os.path import join, splitext, basename
+
 import click
+import numpy as np
+from tensorflow.keras.models import load_model
+from tensorflow.keras.preprocessing import image
 from watchdog.events import FileSystemEventHandler
 from watchdog.observers import Observer
 
@@ -48,7 +49,8 @@ class PredictionClass(object):
         # Definition der aktuellen Zeit
         duration = time.time() - timeSec
         # Berechnung der benötigten Zeit und Ausgabe des Ergebnisses auf der Konsole
-        print(f"{basename(path)} Duration: {duration:0.3f} Image: {self.counter} Result: {prediction} {result_val:0.4f}")
+        print(
+            f"{basename(path)} Duration: {duration:0.3f} Image: {self.counter} Result: {prediction} {result_val:0.4f}")
 
     def load_model(self):
         if self.loaded_model is None:

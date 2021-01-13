@@ -1,11 +1,11 @@
 from typing import Tuple
 
-from tensorflow.keras.models import Sequential, Model
 from tensorflow.keras.layers import Conv2D, Activation, LeakyReLU, BatchNormalization
-from tensorflow.keras.layers import MaxPooling2D
-from tensorflow.keras.layers import Flatten
-from tensorflow.keras.layers import Dropout
 from tensorflow.keras.layers import Dense
+from tensorflow.keras.layers import Dropout
+from tensorflow.keras.layers import Flatten
+from tensorflow.keras.layers import MaxPooling2D
+from tensorflow.keras.models import Sequential, Model
 from tensorflow.keras.optimizers import Optimizer
 
 
@@ -21,7 +21,6 @@ class SimpleModel(object):
         self.kwargs = kwargs
 
     def __call__(self):
-
         model = Sequential()
 
         # first hidden layer

@@ -1,9 +1,8 @@
-from kedro.pipeline import Pipeline, node
-
 from ccmlutils.procedures.defaulttest import defaulttest_node
 from ccmlutils.utilities.experimentmanager import get_exp_data_node
 from ccmlutils.utilities.metricutils import cal_pred_metrics_node, save_metrics_node
 from ccmlutils.utilities.predictionutils import save_predictions_node
+from kedro.pipeline import Pipeline, node
 
 
 def get_test_nodes(set_to_test: str, exp_id_var: str = None, connection_arg: str = None):
@@ -24,8 +23,7 @@ def get_test_nodes(set_to_test: str, exp_id_var: str = None, connection_arg: str
     )
 
     set_name_node = \
-        node(lambda:dict(set_name=set_to_test[5:]), inputs=None, outputs=dict(set_name="set_name" + set_to_test))
-
+        node(lambda: dict(set_name=set_to_test[5:]), inputs=None, outputs=dict(set_name="set_name" + set_to_test))
 
     save_node = node(
         save_predictions_node,
@@ -68,7 +66,6 @@ def get_test_nodes(set_to_test: str, exp_id_var: str = None, connection_arg: str
 
 
 def create_pipeline():
-
     test_node_list = get_test_nodes(
         exp_id_var="params:test_exp", connection_arg="params:dummy_arg", set_to_test="data_test"
     )

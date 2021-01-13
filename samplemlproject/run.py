@@ -1,10 +1,7 @@
 """Application entry point."""
+import os
 from pathlib import Path
 from typing import Dict, Union
-import os
-
-from kedro.context import KedroContext, load_context
-from kedro.pipeline import Pipeline
 
 from ccmlutils.config.envconfig import (
     RUN_ID_KEY,
@@ -12,9 +9,12 @@ from ccmlutils.config.envconfig import (
     get_and_ask_for_exp_name,
 )
 from ccmlutils.utilities.gitutils import fast_commit
-from samplemlproject.pipeline import create_pipelines
 from ccmlutils.utilities.hashutils import generate_short_id
 from ccmlutils.utilities.timeutils import generate_timestamp
+from kedro.framework.context import KedroContext, load_context
+from kedro.pipeline import Pipeline
+
+from samplemlproject.pipeline import create_pipelines
 
 
 class ProjectContext(KedroContext):
@@ -42,7 +42,7 @@ class ProjectContext(KedroContext):
     project_version = "0.15.9"
 
     def _get_run_id(
-        self, *args, **kwargs  # pylint: disable=unused-argument
+            self, *args, **kwargs  # pylint: disable=unused-argument
     ) -> Union[None, str]:
         return self._local_run_id
 
