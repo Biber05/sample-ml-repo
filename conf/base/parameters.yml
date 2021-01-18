@@ -4,7 +4,7 @@
 # Number of training epochs
 epochs: 2
 experiment_path: &experiment_path experiment_outputs/$RUN_ID-id_$SHORT_ID
-project_package_name: &project_package_name samplemlproject
+project_package_name: &project_package_name mltemplate
 
 # Callbacks used for training
 # $RUN_ID is replaced with a timestring

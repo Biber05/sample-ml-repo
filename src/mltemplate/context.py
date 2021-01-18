@@ -7,7 +7,7 @@ from ccmlutils.utilities.timeutils import generate_timestamp
 from kedro.framework.context import KedroContext
 from kedro.pipeline import Pipeline
 
-from src.mltemplate.pipeline import create_pipelines
+from mltemplate.pipeline import create_pipelines
 
 
 class ProjectContext(KedroContext):

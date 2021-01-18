@@ -1,7 +1,7 @@
 
 data_train:
   type: &datasetclass ccmlutils.datasets.imageflowdataset.ImageFlowDataset
-  filepath: &datapath /path/to/fruits-360
+  filepath: &datapath /Users/philipp/Git/cc-ml/sample-ml-repo/data/01_raw
   classes: &classes
     - Avocado
     - Banana
