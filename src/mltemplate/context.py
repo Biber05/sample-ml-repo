@@ -8,7 +8,7 @@ from ccmlutils.utilities.timeutils import generate_timestamp
 from kedro.framework.context import KedroContext
 from kedro.pipeline import Pipeline
 from mltemplate.pipeline import create_pipelines
-
+from mltemplate import PACKAGE_NAME
 
 class ProjectContext(KedroContext):
     """Users can override the remaining methods from the parent class here,
@@ -30,9 +30,9 @@ class ProjectContext(KedroContext):
         print(f"Init Context with: {exp_name} ; {should_commit}")
         if should_commit:
             from pathlib import Path
-            fast_commit(files=["conf/base", "src/mltemplate"], message="EXP-COMMIT: " + exp_name, path=Path(Path.cwd()))
+            fast_commit(files=["conf/base", f"src/{PACKAGE_NAME}"], message="EXP-COMMIT: " + exp_name, path=Path(Path.cwd()))
 
-        project_name = "mltemplate"
+        project_name = PACKAGE_NAME
         # Here the kedro sample version is used
         project_version = "0.17.0"
 

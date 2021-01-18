@@ -5,7 +5,7 @@
 # Keep in mind: these checks (or parts of it) can also be run in your CI-pipeline
 # There is no need to run them on every commit with a CI-server checking on every push
 
-main_module="samplemlproject"
+main_module="mltemplate"
 
 project_dir="$(
   cd "$(dirname "$0")/../.."
