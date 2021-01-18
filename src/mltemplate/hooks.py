@@ -46,7 +46,8 @@ class ProjectHooks:
 
         """
 
-        return {"__default__": Pipeline([])}
+        from pipeline import create_pipelines
+        return create_pipelines()
 
     @hook_impl
     def register_config_loader(self, conf_paths: Iterable[str]) -> ConfigLoader:
