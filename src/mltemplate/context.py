@@ -2,7 +2,6 @@ import os
 from typing import Union, Dict
 
 from ccmlutils.config.envconfig import RUN_ID_KEY, SHORT_ID_KEY, get_and_ask_for_exp_name
-from ccmlutils.utilities.gitutils import fast_commit
 from ccmlutils.utilities.hashutils import generate_short_id
 from ccmlutils.utilities.timeutils import generate_timestamp
 from kedro.framework.context import KedroContext
@@ -28,8 +27,11 @@ class ProjectContext(KedroContext):
         os.environ[SHORT_ID_KEY] = self._local_short_id
         exp_name, should_commit = get_and_ask_for_exp_name()
         exp_name = exp_name if len(exp_name) > 0 else "DEBUG-EXPERIMENT"
+        print(f"Init Context with: {exp_name} ; {should_commit}")
         if should_commit:
-            fast_commit(["/conf/base", "mltemplate"], "EXP-COMMIT: " + exp_name)
+            pass
+            # todo
+            # fast_commit(["/conf/base", "mltemplate"], "EXP-COMMIT: " + exp_name)
 
     project_name = "mltemplate"
     # Here the kedro sample version is used

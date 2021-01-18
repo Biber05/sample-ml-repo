@@ -27,6 +27,7 @@
 # limitations under the License.
 
 """Project settings."""
+from mltemplate.context import ProjectContext
 from mltemplate.hooks import ProjectHooks
 
 # Instantiate and list your project hooks here
@@ -45,7 +46,7 @@ HOOKS = (ProjectHooks(),)
 # }
 
 # Define custom context class. Defaults to `KedroContext`
-# CONTEXT_CLASS = KedroContext
+CONTEXT_CLASS = ProjectContext
 
 # Define the configuration folder. Defaults to `conf`
 # CONF_ROOT = "conf"
