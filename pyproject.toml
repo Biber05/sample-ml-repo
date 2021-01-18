@@ -1,8 +1,9 @@
 [tool.poetry]
-name = "samplemlproject"
+name = "mltemplate"
 version = "0.1.0"
 description = ""
-authors = ["Denis Stalz-John <denis.stalz-john@codecentric.de>"]
+authors = ["philipp.wolters <philipp.wolters@codecentric.de>"]
+include = ["./src/mltemplate"]
 
 [tool.poetry.dependencies]
 python = "~3.7.1"
@@ -13,8 +14,8 @@ tensorflow-cpu = "^2.4.0"
 tensorflow-estimator = "2.4.0"
 pillow = "^7.1.1"
 streamlit = "^0.58.0"
-altair = "^4.1.0"
-ccmlutils = {git = "https://github.com/Biber05/ccmlutils.git", branch = "develop"}
+ccmlutils = { git = "https://github.com/Biber05/ccmlutils.git", branch = "develop" }
+sklearn = "^0.0"
 
 [tool.poetry.dev-dependencies]
 pytest = "^5.2"
@@ -23,3 +24,23 @@ black = "^19.10b0"
 [build-system]
 requires = ["poetry>=0.12"]
 build-backend = "poetry.masonry.api"
+
+# KEDRO
+
+[tool.kedro]
+package_name = "mltemplate"
+project_name = "mltemplate"
+project_version = "0.17.0"
+
+[tool.isort]
+multi_line_output = 3
+include_trailing_comma = true
+force_grid_wrap = 0
+use_parentheses = true
+line_length = 88
+known_third_party = "kedro"
+
+[tool.pytest.ini_options]
+addopts = """
+--cov-report term-missing \
+--cov src/mltemplate -ra"""

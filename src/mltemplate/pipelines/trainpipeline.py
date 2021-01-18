@@ -3,8 +3,8 @@ from kedro.pipeline import Pipeline, node
 from ccmlutils.callbacks.createcallbacks import create_callbacks_node
 from ccmlutils.procedures.defaulttrain import fit_generator
 
-from samplemlproject.models.simplemodel import get_simple_model
-from samplemlproject.pipelines.testpipeline import get_test_nodes
+from mltemplate.models.simplemodel import get_simple_model
+from mltemplate.pipelines.testpipeline import get_test_nodes
 from ccmlutils.utilities.factoryutils import init_object
 
 

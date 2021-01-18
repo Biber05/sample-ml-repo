@@ -1,8 +1,8 @@
-.. kedrosample documentation master file, created by sphinx-quickstart.
+.. mltemplate documentation master file, created by sphinx-quickstart.
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Welcome to project's kedrosample API docs!
+Welcome to project mltemplate's API docs!
 =============================================
 
 .. toctree::

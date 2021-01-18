@@ -40,7 +40,7 @@ from kedro.pipeline import Pipeline
 # well as pipelines/data_science AND pipelines/data_engineering
 # -------------------------------------------------------------------------
 
-from samplemlproject.pipelines import trainpipeline, testpipeline
+from mltemplate.pipelines import trainpipeline, testpipeline
 
 
 def create_pipelines() -> Dict[str, Pipeline]:

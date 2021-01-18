@@ -1,4 +1,4 @@
-from samplemlproject import __version__
+from src.mltemplate import __version__
 
 
 def test_version():
