@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "mltemplate"
-version = "0.1.0"
+version = "1.0.0"
 description = ""
 authors = ["philipp.wolters <philipp.wolters@codecentric.de>"]
 include = ["./src/mltemplate"]
@@ -14,7 +14,7 @@ tensorflow-cpu = "^2.4.0"
 tensorflow-estimator = "2.4.0"
 pillow = "^7.1.1"
 streamlit = "^0.58.0"
-ccmlutils = { git = "https://github.com/Biber05/ccmlutils.git", branch = "develop" }
+ccmlutils = { git = "https://github.com/Biber05/ccmlutils.git"}
 sklearn = "^0.0"
 
 [tool.poetry.dev-dependencies]
